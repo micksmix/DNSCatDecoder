@@ -11,6 +11,9 @@
 # author: Mick Grove
 # http://micksmix.wordpress.com
 #
+# License: The BSD 2-Clause License (http://opensource.org/licenses/bsd-license.php)
+#
+# requires dpkt --- https://code.google.com/p/dpkt/
 #
 
 import sys
@@ -47,6 +50,7 @@ def decodeErr(data):
 
     return errcode
 
+
 def decodeHex(data):
     data = data.upper()
     k = len(data)
@@ -58,6 +62,7 @@ def decodeHex(data):
             pass
 
     return ''.join(l)
+
 
 def decodeNetBios(data):
     data = data.upper()
@@ -71,6 +76,7 @@ def decodeNetBios(data):
             pass
 
     return ''.join(l)
+
 
 def decodeFlags(data, fp):
     #-- protocol flags
@@ -111,6 +117,7 @@ def decodeFlags(data, fp):
 def getSubs(data):
     result = re.findall("(?im)[^%.]+", data)
     return result # = list
+
 
 def main(data, fp):
     x = getSubs(data)
@@ -157,6 +164,7 @@ def main(data, fp):
 
             x.pop(0)
 
+
 def parsePcapFile(pcap):
     fp ={}
     for (ts, buf) in pcap:
@@ -191,14 +199,13 @@ def parsePcapFile(pcap):
         except:
             pass
 
+
 if __name__ == '__main__':
     if not os.path.exists(sys.argv[1]):
         sys.exit('ERROR: Pcap file <%s> was not found!' % sys.argv[1])
 
     inputfile = str(sys.argv[1])
 
-
     f = open(inputfile, "rb")
     pcap = dpkt.pcap.Reader(f)
     parsePcapFile(pcap)
-

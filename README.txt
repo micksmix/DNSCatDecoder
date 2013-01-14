@@ -11,3 +11,5 @@ python ./dnscatdecoder.py dnscat_captured_traffic.pcap
 
 Author: Mick Grove
 License: The BSD 2-Clause License (http://opensource.org/licenses/bsd-license.php)
+
+DNSCat can be dowloaded here: http://www.skullsecurity.org/wiki/index.php/Dnscat
