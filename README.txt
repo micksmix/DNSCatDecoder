@@ -4,9 +4,11 @@ This is a Python port of Diablo Horn's LUA script that accomplishes the
 same task. Have a look at their script as well:
 http://diablohorn.wordpress.com/2010/12/05/dnscat-traffic-post-dissector/
 
-How to use:
-This requires a pcap network capture as its only input:
+How to use
+===========
+This requires dpkt --- https://code.google.com/p/dpkt/
 
+Provide a pcap file as input:
 python ./dnscatdecoder.py dnscat_captured_traffic.pcap
 
 Author: Mick Grove
