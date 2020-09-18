@@ -1,12 +1,15 @@
-Parser/dissector/decoder for DNSCat captured traffic
+# Parser/dissector/decoder for DNSCat captured traffic
 
-This is a Python port of Diablo Horn's LUA script that accomplishes the
-same task. Have a look at their script as well:
+This is a Python3 port of Diablo Horn's LUA script that accomplishes the same task. Have a look at their script as well:
 http://diablohorn.wordpress.com/2010/12/05/dnscat-traffic-post-dissector/
 
-How to use
-===========
+## How to use
+
 This requires dpkt --- https://code.google.com/p/dpkt/
+It's available in pip
+```bash
+pip install dpkt
+```
 
 Provide a pcap file as input:
 python ./dnscatdecoder.py dnscat_captured_traffic.pcap

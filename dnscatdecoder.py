@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 #
 # dnscatdecoder.py
-# v0.1
+# v0.1.1
 #
-# Jan 14, 2013
+# Sep 14, 2020
 #
 # entirely based off of this script:
 #     http://diablohorn.wordpress.com/2010/12/05/dnscat-traffic-post-dissector/
@@ -13,7 +13,8 @@
 #
 # License: The BSD 2-Clause License (http://opensource.org/licenses/bsd-license.php)
 #
-# requires dpkt --- https://code.google.com/p/dpkt/
+# requires dpkt --- https://code.google.com/p/dpkt/ 
+# pip install dpkt 
 #
 
 import sys
@@ -189,9 +190,9 @@ def parsePcapFile(pcap):
                 continue
 
             if dns.qd[0].type == 5:
-                print "original line: %s\n" % dns.qd[0].name
+                print ("original line: %s\n" % dns.qd[0].name)
                 main(dns.qd[0].name, fp)
-                print fp['asciidata']
+                print (fp['asciidata'])
                 print("---")
                 print("")
                 fp.clear()
